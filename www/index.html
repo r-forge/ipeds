@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Integrated Postsecondary Education Data System (IPEDS) Package for R</title>
+	</head>
+	<body>
+		<h1><i>ipeds</i> Package for R</h1>
+		<h3>This page summarizes the <i>ipeds</i> package for R. The purpose of this package is to provide functions to assist with reporting surveys to and retrieving data from the Integrated Postsecondary Education Data System (IPEDS).</h3>
+		
+		<p>The project summary page you can find <a href="http://r-forge.r-project.org/projects/ipeds/">here</a>.</p>
+		
+		<h4>The following example demonstrates how to retrieve survey data from IPEDS.</h4>
+<pre>
+#Install the package
+install.packages('ipeds', repos=c('http://R-Forge.R-project.org', 'http://lib.stat.cmu.edu/R/CRAN'), dep=TRUE)
+
+#Load the package
+library(ipeds)
+
+#List the available functions
+ls('package:ipeds')
+
+#These are the data frames included in the package
+data(surveys); names(surveys)
+data(cipcodes); names(surveys)
+data(crosswalk); names(crosswalk)
+
+#Download the directory information
+directory = getIPEDSSurvey('HD', 2009)
+names(directory); nrow(directory)
+unitid = directory[which(directory$instnm == 'Excelsior College'),'unitid']
+
+ipedsHelp('HD', 2009)
+
+#Get the 12-month enrollment survey
+enrollment12month = getIPEDSSurvey('EFFY', 2009)
+names(enrollment12month); nrow(enrollment12month)
+enrollment12month[which(enrollment12month$unitid == unitid),]
+
+ipedsHelp('EFFY', 2009)
+</pre>
+	</body>
+</html>
