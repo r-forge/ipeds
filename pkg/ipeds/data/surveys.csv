@@ -1,0 +1,24 @@
+SurveyID;Survey;Title;DataFilePre;DataFilePost
+HD;Institutional Characteristics;Directory information;HD;
+IC;Institutional Characteristics;"Educational offerings, organization, admissions, services and athletic associations";IC;
+IC_AY;Institutional Characteristics;Student charges for academic year programs;IC;_AY
+IC_PY;Institutional Characteristics;Student charges by program (vocational programs);IC;_PY
+FLAGS;Institutional Characteristics;Response status for all survey components;FLAGS;
+EFEST;Enrollments;Estimated enrollment;EFEST;
+EFFY;Enrollments;12-month unduplicated headcount;EFFY;
+EFIA;Enrollments;12-month instructional activity;EFIA;
+FLAGS;Enrollments;Response status for all survey components;FLAGS;
+C_A;Completions;"Awards/degrees conferred by program (6-digit CIP code), award level, race/ethnicity, and gender";C;_A
+FLAGS;Completions;Response status for all survey components;FLAGS;
+SAL_A;Instructional staff/Salaries;"Salaries of full-time instructional faculty, by contract length, gender, and academic rank";SAL;_A
+SAL_B;Instructional staff/Salaries;"Fringe benefits of full-time instructional faculty, by contract length";SAL;_B
+SAL_FACULTY;Instructional staff/Salaries;"Tenure status of full-time instructional faculty in 4-year institutions, by contract length, gender, and academic rank";SAL;_FACULTY
+SAL_A_LT9;Instructional staff/Salaries;"Number of full-time instructional faculty with less than 9-month contracts, by gender and academic rank";SAL;_A_LT9
+FLAGS;Instructional staff/Salaries;Response status for all survey components;FLAGS;
+S_ABD;Fall Staff;"Employees by primary occupation, salary categories, race/ethnicity, and gender (Degree-granting institutions with 15 or more full-time employees)";S;_ABD
+S_F;Fall Staff;"Full-time instruction/research/public service staff, by tenure status, academic rank, race/ethnicity, and gender (Degree-granting institutions with 15 or more full-time employees)";S;_F
+S_G;Fall Staff;"New hires by primary occupation, race/ethnicity, and gender (Degree-granting institutions with 15 or more full-time employees)";S;_G
+S_CN;Fall Staff;"Employees by primary occupation, race/ethnicity, and gender (Degree-granting institutions with less than 15 full-time employees and all nondegree-granting institutions)";S;_CN
+FLAGS;Fall Staff;Response status for all survey components;FLAGS;
+EAP;Employees by Assigned Position;"Employees by faculty status, primary function/occupational activity";EAP;
+FLAGS;Employees by Assigned Position;Response status for all survey components;FLAGS;
