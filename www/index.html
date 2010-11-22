@@ -37,6 +37,11 @@ names(enrollment12month); nrow(enrollment12month)
 enrollment12month[which(enrollment12month$unitid == unitid),]
 
 ipedsHelp('EFFY', 2009)
+
+#If you are going to be working ofline you can download all
+# the surveys and help for a given year.
+downloadHelp(2009)
+downloadAllSurveys(2009)
 </pre>
 	</body>
 </html>
