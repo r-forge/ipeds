@@ -28,3 +28,8 @@ downloadIPEDSSurvey <- function(surveyId, year) {
 	r
 }
 
+downloadAllSurveys <- function(year) {
+	for(i in 1:nrow(surveys)) {
+		downloadIPEDSSurvey(surveys[i,'SurveyID'], year)
+	}
+}
