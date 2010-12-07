@@ -1,3 +1,18 @@
+recodeDirectory(hd) {
+	hd$control = recodeControl(hd$control)
+	hd$obereg = recodeGeographicRegion(hd$obereg)
+	hd$opeflag = recodeTitleIVEligibility(hd$opeflag)
+	hd$sector = recodeSector(hd$sector)
+	hd$iclevel = recodeLevelOfInstitution(hd$iclevel)
+	hd$hloffer = recodeHighestLevelOfOffering(hd$hloffer)
+	hd$ugoffer = recodeUndergraduateOffering(hd$ugoffer)
+	hd$groffer = recodeGraduateOffering(hd$groffer)
+	hd$hdegofr1 = recodeHighestDegreeOffered(hd$hdegofr1)
+	hd$openpubl = recodeOpenPublic(hd$openpubl)
+	hd$pset4flg = recodeTitleIVIndicator(hd$pset4flg)
+	hd$instsize = recodeInstitutionSize(hd$instsize)
+	hd
+}
 recodeImputation <- function(col) {
 	factor(col, levels=c('A','B','C','D','G','H','J','K','L','N','P','R','Z'),
 		   labels=c('Not applicable',
@@ -137,4 +152,22 @@ recodeInstitutionSize <- function(col) { #INSTSIZE
 				"20,000 and above",
 				"Not reported",
 				"Not applicable"))
+}
+
+recodeAwardLevel <- function(col) {#AWLEVEL
+	factor(col, levels=c(3,5,7,9,10,17,18,19,1,2,4,6,8,11),
+		   labels=c("Associate's degree",
+				"Bachelor's degree",
+				"Master's degree",
+				"Doctor's degree",
+				"First-professional degree",
+				"Doctor's degree - research/scholarship",
+				"Doctor's degree - professional practice",
+				"Doctor's degree - other",
+				"Award of less than 1 academic year",
+				"Award of at least 1 but less than 2 academic years",
+				"Award of at least 2 but less than 4 academic years",
+				"Postbaccalaureate certificate",
+				"Post-master's certificate",
+				"First-professional certificate"))
 }
