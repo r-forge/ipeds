@@ -1,4 +1,4 @@
-recodeDirectory(hd) {
+recodeDirectory <- function(hd) {
 	hd$control = recodeControl(hd$control)
 	hd$obereg = recodeGeographicRegion(hd$obereg)
 	hd$opeflag = recodeTitleIVEligibility(hd$opeflag)
@@ -13,6 +13,7 @@ recodeDirectory(hd) {
 	hd$instsize = recodeInstitutionSize(hd$instsize)
 	hd
 }
+
 recodeImputation <- function(col) {
 	factor(col, levels=c('A','B','C','D','G','H','J','K','L','N','P','R','Z'),
 		   labels=c('Not applicable',
