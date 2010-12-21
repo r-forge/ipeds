@@ -5,11 +5,11 @@ ipedsHelp <- function(surveyId, year) {
 	}
 	dir = system.file(package="ipeds")
 	dir.create(paste(dir, '/data/dict/', sep=''), showWarnings=FALSE)
-	file = tolower(paste(s[1,'DataFilePre'], year, s[1,'DataFilePost'], '.html', sep=''))
+	file = tolower(paste(s[1,'DataFilePre'], formatYear(surveyId, year), s[1,'DataFilePost'], '.html', sep=''))
 	dest = paste(dir, '/data/dict/', file, sep='')
 	if(!file.exists(dest)) {
-		dest = paste(dir, '/data/dict/', s[1,'DataFilePre'], year, s[1,'DataFilePost'], '_Dict', '.zip', sep='')
-		url = paste(ipedsDataUrl, s[1,'DataFilePre'], year, s[1,'DataFilePost'], '_Dict', '.zip', sep='')
+		dest = paste(dir, '/data/dict/', s[1,'DataFilePre'], formatYear(surveyId, year), s[1,'DataFilePost'], '_Dict', '.zip', sep='')
+		url = paste(ipedsDataUrl, s[1,'DataFilePre'], formatYear(surveyId, year), s[1,'DataFilePost'], '_Dict', '.zip', sep='')
 		download.file(url, dest, mode="wb")
 		unzip(dest, exdir=paste(dir, "/data/dict", sep=""))
 		unlink(dest)
