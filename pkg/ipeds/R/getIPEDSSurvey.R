@@ -16,6 +16,15 @@ getIPEDSSurvey <- function(surveyId, year) {
 
 downloadIPEDSSurvey <- function(surveyId, year) {
 	s = surveys[which(surveys$SurveyID==surveyId),]
+	if(s['YearFormat'] == 4) {
+		year = as.character(year)
+	} else if(s['YearFormat'] == 2) {
+		year = substr(year, 3,4)
+	} else if(s['YearFormat'] == 22) {
+		year = paste(substr((year-1), 3,4), substr(year, 3,4), sep='')
+	} else if(s['YearFormat'] == 44) {
+		year = paste((year-1), year, sep='')
+	}
 	dir = system.file(package="ipeds")
 	file = paste(s[1,'DataFilePre'], year, s[1,'DataFilePost'], sep='')
 	url = paste(ipedsDataUrl, file, '.zip', sep='')
