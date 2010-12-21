@@ -16,6 +16,20 @@ getIPEDSSurvey <- function(surveyId, year) {
 
 downloadIPEDSSurvey <- function(surveyId, year) {
 	s = surveys[which(surveys$SurveyID==surveyId),]
+	dir = system.file(package="ipeds")
+	file = paste(s[1,'DataFilePre'], formatYear(surveyId, year), s[1,'DataFilePost'], sep='')
+	url = paste(ipedsDataUrl, file, '.zip', sep='')
+	dir.create(paste(dir, '/data/downloaded/', sep=''), showWarnings=FALSE)
+	dest = paste(dir, "/data/downloaded/", file, '.zip', sep="")
+	download.file(url, dest, mode="wb")
+	unzip(dest, exdir=paste(dir, "/data/downloaded", sep=""))
+	unlink(dest)
+	r = read.csv(paste(dir, "/data/downloaded/", file, ".csv", sep=""))
+	r
+}
+
+formatYear <- function(surveyId, year) {
+	s = surveys[which(surveys$SurveyID==surveyId),]
 	if(s['YearFormat'] == 4) {
 		year = as.character(year)
 	} else if(s['YearFormat'] == 2) {
@@ -25,16 +39,7 @@ downloadIPEDSSurvey <- function(surveyId, year) {
 	} else if(s['YearFormat'] == 44) {
 		year = paste((year-1), year, sep='')
 	}
-	dir = system.file(package="ipeds")
-	file = paste(s[1,'DataFilePre'], year, s[1,'DataFilePost'], sep='')
-	url = paste(ipedsDataUrl, file, '.zip', sep='')
-	dir.create(paste(dir, '/data/downloaded/', sep=''), showWarnings=FALSE)
-	dest = paste(dir, "/data/downloaded/", file, '.zip', sep="")
-	download.file(url, dest, mode="wb")
-	unzip(dest, exdir=paste(dir, "/data/downloaded", sep=""))
-	unlink(dest)
-	r = read.csv(paste(dir, "/data/downloaded/", file, ".csv", sep=""))
-	r
+	year
 }
 
 downloadAllSurveys <- function(year) {
