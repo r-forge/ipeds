@@ -5,8 +5,14 @@ IC_AY;Institutional Characteristics;Student charges for academic year programs;I
 IC_PY;Institutional Characteristics;Student charges by program (vocational programs);IC;_PY;4
 FLAGS;Institutional Characteristics;Response status for all survey components;FLAGS;;4
 EFEST;Enrollments;Estimated enrollment;EFEST;;4
+EFA;Enrollments;Race/ethnicity, gender, attendance status, and level of students: Fall;EF;A;4
+EFB;Enrollments;Age category, gender, attendance status, and level of student: Fall;EF;B;4
+EFC;Enrollments;Residence and migration of first-time freshman: Fall;EF;C;4
+EFD;Enrollments;Total entering class and retention rates: Fall;EF;D;4
 EFFY;Enrollments;12-month unduplicated headcount;EFFY;;4
+EFD1;Enrollments;12-month unduplicated enrollment prior to 2002;EF;D1;4
 EFIA;Enrollments;12-month instructional activity;EFIA;;4
+EFD2;Enrollments;12-month instructional activity prior to 2002;EF;D2;4
 FLAGS;Enrollments;Response status for all survey components;FLAGS;;4
 C_A;Completions;"Awards/degrees conferred by program (6-digit CIP code), award level, race/ethnicity, and gender";C;_A;4
 FLAGS;Completions;Response status for all survey components;FLAGS;;4
